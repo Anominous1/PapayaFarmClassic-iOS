@@ -1,0 +1,42 @@
+name: PapayaFarmClassic
+options:
+  bundleIdPrefix: org.papaya.classic
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    PRODUCT_BUNDLE_IDENTIFIER: org.papaya.classic.ios
+    GENERATE_INFOPLIST_FILE: "NO"
+    INFOPLIST_FILE: PapayaFarmClassic/Info.plist
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    SUPPORTS_MACCATALYST: "NO"
+    ENABLE_BITCODE: "NO"
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGNING_ALLOWED: "NO"
+    SWIFT_OPTIMIZATION_LEVEL: "-O"
+targets:
+  PapayaFarmClassic:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: PapayaFarmClassic/PapayaFarmApp.swift
+      - path: PapayaFarmClassic/Assets.xcassets
+      - path: PapayaFarmClassic/Resources/www
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: PapayaFarmClassic
+        PRODUCT_BUNDLE_IDENTIFIER: org.papaya.classic.ios
+schemes:
+  PapayaFarmClassic:
+    build:
+      targets:
+        PapayaFarmClassic: all
+    run:
+      config: Debug
+    archive:
+      config: Release

@@ -1,0 +1,20 @@
+Papaya Farm Classic — iOS Build Status
+======================================
+Target: iPhone 15 Pro Max, iOS 26.4.1
+Source project: COMPLETE
+Web gameplay UI: rendered in local Chromium test, no JavaScript errors
+Swift source: parsed successfully using installed Swift compiler
+Protocol: aligned with existing Synology NAS Server v0.4 UDP/37942
+
+NOT YET BUILT:
+The Apple iPhone IPA. The environment that created this project is Linux,
+which lacks Xcode, the Apple iPhoneOS SDK, and an iOS-capable linker.
+
+TO PRODUCE AN IPA:
+Use .github/workflows/build-iphone-ipa.yml in a GitHub repository, or
+run build_on_mac.sh on macOS with Xcode and XcodeGen. The resulting IPA
+is unsigned and must be signed by your sideloading application.
+
+Security: use only on a trusted private network or Tailscale VPN.
+The existing Papaya NAS protocol transmits farm PINs without end-to-end
+app-level encryption; do not forward UDP port 37942 to the open internet.
